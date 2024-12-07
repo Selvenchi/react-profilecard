@@ -11,14 +11,7 @@ function App() {
         {/* Should contain one Skill component
         for each web dev skill that you have,
         customized with props */}
-        <SkillList
-          skill1="HTML + CSS 💪"
-          skill2="JavaScript 💪"
-          skill3="Web Design 💪"
-          skill4="Git and GitHub 💪"
-          skill5="React 💪"
-          skill6="Svelte 💪"
-        />
+        <SkillList />
       </div>
     </div>
   );
@@ -37,63 +30,31 @@ function Intro() {
   );
 }
 
-function SkillList(props) {
+function SkillList() {
   return (
     <div className="skill-list">
-      <p
-        style={{
-          backgroundColor: "lightblue",
-          padding: "3px 6px",
-          borderRadius: "5px",
-        }}
-      >
-        {props.skill1}
-      </p>
-      <p
-        style={{
-          backgroundColor: "lightyellow",
-          padding: "3px 6px",
-          borderRadius: "5px",
-        }}
-      >
-        {props.skill2}
-      </p>
-      <p
-        style={{
-          backgroundColor: "lightgreen",
-          padding: "3px 6px",
-          borderRadius: "5px",
-        }}
-      >
-        {props.skill3}
-      </p>
-      <p
-        style={{
-          backgroundColor: "coral",
-          padding: "3px 6px",
-          borderRadius: "5px",
-        }}
-      >
-        {props.skill4}
-      </p>
-      <p
-        style={{
-          backgroundColor: "lightcyan",
-          padding: "3px 6px",
-          borderRadius: "5px",
-        }}
-      >
-        {props.skill5}
-      </p>
-      <p
-        style={{
-          backgroundColor: "red",
-          padding: "3px 6px",
-          borderRadius: "5px",
-        }}
-      >
-        {props.skill6}
-      </p>
+      <Skill skill="React" emoji="💪" color="wheat" />
+      <Skill skill="JavaScript" emoji="💪" color="lightblue" />
+      <Skill skill="Web Design" emoji="💪" color="orange" />
+      <Skill skill="Git and GitHub" emoji="💪" color="lightyellow" />
+      <Skill skill="React" emoji="💪" color="coral" />
+      <Skill skill="Svelte" emoji="💪" color="lightgreen" />
+    </div>
+  );
+}
+
+function Skill(props) {
+  return (
+    <div
+      style={{
+        backgroundColor: props.color,
+        padding: "3px 6px",
+        borderRadius: "5px",
+      }}
+      className="skill"
+    >
+      <span>{props.skill}</span>
+      <span>{props.emoji}</span>
     </div>
   );
 }
